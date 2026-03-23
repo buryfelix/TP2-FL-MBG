@@ -1,3 +1,5 @@
+package pays;
+
 public class Pays {
 
     public static final String CODE_TEMP = "ASS";
