@@ -20,7 +20,6 @@ public class TestOuvrage {
         test.testTrouver();
     }
 
-
     public void testOuvrages() {
         //Deux auteurs deja prets pour les tests...
         Auteur albertine = new Auteur("Albertine", "Tremblay", "Canada");
