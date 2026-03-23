@@ -5,6 +5,7 @@ import java.util.List;
 
 import livres.Ouvrage;
 import livres.Auteur;
+import serie.Serie;
 
 /**
  * CoursPOO 1
@@ -101,6 +102,16 @@ public class TestOuvrage {
         System.out.println("Livres de Jacques: " + resultat);
     }
 
+    public void testSerie(){
+        //Création d'un auteur valide
+        Auteur john = new Auteur("John", "Smith", "Etats-Unis");
+        //Création d'un ouvrage valide
+        Ouvrage livreA = new Ouvrage("Harry Potter et la Communauté de l'Anneau", john);
+        //Création d'une série
+        Serie serieA = new Serie("Harry Potter");
+        //Ajout d'un ouvrage
+        serieA.ouvrages.add(livreA);
+    }
 
 }
 
