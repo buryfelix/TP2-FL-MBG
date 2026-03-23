@@ -1,5 +1,7 @@
 package livres;
 
+import pays.Pays;
+
 import java.util.Objects;
 
 /**
@@ -15,16 +17,16 @@ public class Auteur {
 
     private String prenom = INCONNU;
     private String nom = INCONNU;
-    private String paysOrigine = INCONNU;
+    private Pays paysOrigine = new Pays("INCONNU", "AAA");
 
-    public Auteur(String prenom, String nom, String paysOrigine) {
+    public Auteur(String prenom, String nom, Pays paysOrigine) {
         setPrenom(prenom);
         setNom(nom);
         setPaysOrigine(paysOrigine);
     }
 
     public Auteur() {
-        this(INCONNU, INCONNU, INCONNU);
+        this(INCONNU, INCONNU, new Pays("INCONNU","AAA"));
     }
 
     public String getPrenom() {
@@ -43,11 +45,11 @@ public class Auteur {
         this.nom = nom;
     }
 
-    public String getPaysOrigine() {
+    public Pays getPaysOrigine() {
         return paysOrigine;
     }
 
-    private void setPaysOrigine(String paysOrigine) {
+    private void setPaysOrigine(Pays paysOrigine) {
         this.paysOrigine = paysOrigine;
     }
 
