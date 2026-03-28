@@ -10,7 +10,7 @@ import java.util.Objects;
  * @since H25
  */
 
-public class Ouvrage {
+abstract public class AbstractOuvrage {
 
     public enum Format {
         PAPIER, AUDIO, VIDEO
@@ -27,19 +27,19 @@ public class Ouvrage {
     private int nombreExemplaires = NOMBRE_EXEMPLAIRE_DEFAUT;
     private Format type = TYPE_DEFAULT;
 
-    public Ouvrage(String titre, Auteur auteur, Format type,
-                   LocalDate date, int nombreExemplaires) {
+    public AbstractOuvrage(String titre, Auteur auteur, Format type,
+                           LocalDate date, int nombreExemplaires) {
         setTitre(titre);
         setAuteur(auteur);
         this.type = type;
         setDate(date);
         setNombreExemplaires(nombreExemplaires);
     }
-    public Ouvrage(String titre, Auteur auteur,Format type) {
+    public AbstractOuvrage(String titre, Auteur auteur, Format type) {
         this(titre, auteur, type, null, NOMBRE_EXEMPLAIRE_DEFAUT);
     }
 
-    public Ouvrage(String titre, Auteur auteur) {
+    public AbstractOuvrage(String titre, Auteur auteur) {
         this(titre, auteur, TYPE_DEFAULT, null, NOMBRE_EXEMPLAIRE_DEFAUT);
     }
 
@@ -48,7 +48,7 @@ public class Ouvrage {
     }
 
     private void setTitre(String titre) {
-        if (Ouvrage.titreValide(titre)) {
+        if (AbstractOuvrage.titreValide(titre)) {
             this.titre = titre;
         } else {
             System.out.println("Titre invalide : " + titre);
@@ -80,7 +80,7 @@ public class Ouvrage {
     }
 
     private void setNombreExemplaires(int nombreExemplaires) {
-        if (Ouvrage.nombreExemplairesValides(nombreExemplaires)) {
+        if (AbstractOuvrage.nombreExemplairesValides(nombreExemplaires)) {
             this.nombreExemplaires = nombreExemplaires;
         } else {
             System.out.println("Nombre exemplaires invalide: " + nombreExemplaires);
@@ -116,7 +116,7 @@ public class Ouvrage {
         boolean possible = false;
         int reste = getNombreExemplaires() - nombre;
 
-        if (Ouvrage.nombreExemplairesValides(reste)) {
+        if (AbstractOuvrage.nombreExemplairesValides(reste)) {
             setNombreExemplaires(reste);
             possible = true;
         } else {
@@ -129,8 +129,8 @@ public class Ouvrage {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Ouvrage)) return false;
-        Ouvrage ouvrage = (Ouvrage) o;
+        if (!(o instanceof AbstractOuvrage)) return false;
+        AbstractOuvrage ouvrage = (AbstractOuvrage) o;
         return Objects.equals(titre, ouvrage.titre) &&
                 Objects.equals(auteur, ouvrage.auteur) &&
                 type == ouvrage.type;
@@ -146,6 +146,6 @@ public class Ouvrage {
     }
 
     private static boolean titreValide(String titre) {
-        return ((titre != null) && (titre.length() >= Ouvrage.LONGUEUR_TITRE_MIN));
+        return ((titre != null) && (titre.length() >= AbstractOuvrage.LONGUEUR_TITRE_MIN));
     }
 }
