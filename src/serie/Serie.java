@@ -1,6 +1,6 @@
 package serie;
 
-import livres.Ouvrage;
+import livres.AbstractOuvrage;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class Serie {
     public static final String INCONNU = "Inconnu";
 
     public String nom;
-    public ArrayList<Ouvrage> ouvrages = new ArrayList<Ouvrage>();
+    public ArrayList<AbstractOuvrage> ouvrages = new ArrayList<AbstractOuvrage>();
 
     public Serie (String nom) {
         setNom(nom);
