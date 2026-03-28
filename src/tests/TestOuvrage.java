@@ -6,6 +6,7 @@ import java.util.List;
 import livres.AbstractOuvrage;
 import livres.Auteur;
 
+import livres.OuvrageAudio;
 import livres.OuvragePapier;
 import serie.Serie;
 
@@ -40,8 +41,8 @@ public class TestOuvrage {
         OuvragePapier livreA = new OuvragePapier("Titre assez long", john, 500000000);
         System.out.println(livreA);
         //TODO REFAIRE OUVRAGES, livreB AUDIO ET livreC VIDEO
-//        Ouvrage livreB = new Ouvrage("Ti", john);
-//        System.out.println(livreB);
+          OuvrageAudio livreB = new OuvrageAudio("Ti", john, OuvrageAudio.FormatAudio.NUMERIQUE, 5);
+          System.out.println(livreB);
 //        Ouvrage livreC = new Ouvrage(null, john);
 //        System.out.println(livreC);
 
@@ -60,12 +61,12 @@ public class TestOuvrage {
         System.out.println(livre1);
 
         //Test de la validation sur le nb d'exemplaires (valide et non valide)
-        //TODO REFAIRE OUVRAGES, livre2 AUDIO
-//        Ouvrage livre2 = new Ouvrage("Tout va bien", albertine, Ouvrage.Format.AUDIO, LocalDate.now(), -10);
-//        System.out.println(livre2);
 
-//        livre2 = new Ouvrage("Tout va bien", albertine, Ouvrage.Format.PAPIER, LocalDate.now(), 20);
-//        System.out.println(livre2);
+        OuvrageAudio livre2 = new OuvrageAudio("Tout va bien", albertine, OuvrageAudio.FormatAudio.ANALOGIQUE, 10, LocalDate.now(), -10);
+        System.out.println(livre2);
+
+        livre2 = new OuvrageAudio("Tout va bien", albertine, OuvrageAudio.FormatAudio.ANALOGIQUE,10, LocalDate.now(), 20);
+        System.out.println(livre2);
 
         System.out.println("\n-----Tests des méthodes acheter et vendre-----------");
 
