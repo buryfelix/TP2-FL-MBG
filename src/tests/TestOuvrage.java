@@ -138,17 +138,19 @@ public class TestOuvrage {
         //Tests de pays invalides
         System.out.println("-----Test des constructeurs de pays et des diverses validations-----------");
         Pays invalide1 = new Pays("Canada", "AAAA");
-        System.out.println(invalide1);
+
         Pays invalide2 = new Pays("France", "AA");
-        System.out.println(invalide2);
+
         Pays invalide3 = new Pays("France", "aaa");
-        System.out.println(invalide3);
+
         Pays invalide4 = new Pays("France", "111");
-        System.out.println(invalide4);
+
 
         //Création d'un pays valide
         Pays angleterre = new Pays("Angleterre", "ANG");
         Auteur auteur1 = new Auteur("William", "Shakespeare", angleterre);
+        System.out.println(angleterre);
+        System.out.println(auteur1);
 
 
     }
