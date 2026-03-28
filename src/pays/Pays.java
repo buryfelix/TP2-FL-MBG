@@ -23,4 +23,12 @@ public class Pays {
     public boolean valideCode(String code){
         return code != null && code.matches("^[A-Z]{3}$");
     }
+
+    @Override
+    public String toString() {
+        return "Pays{" +
+                "nom='" + nom + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }
