@@ -24,6 +24,7 @@ public class TestOuvrage {
         test.testOuvrages();
         test.testTrouver();
         test.testPays();
+        test.testSerie();
     }
 
     public void testOuvrages() {
@@ -120,8 +121,16 @@ public class TestOuvrage {
         Ouvrage livreA = new Ouvrage("Harry Potter et la Communauté de l'Anneau", john);
         //Création d'une série
         Serie serieA = new Serie("Harry Potter");
+        System.out.println(serieA);
+        Serie serieB = new Serie(null);
+        System.out.println(serieB);
         //Ajout d'un ouvrage
         serieA.ouvrages.add(livreA);
+        System.out.println(serieA);
+
+        //Retrait d'un ouvrage
+        serieA.ouvrages.remove(livreA);
+        System.out.println(serieA);
     }
 
     public void testPays() {
@@ -138,8 +147,7 @@ public class TestOuvrage {
         System.out.println(invalide4);
 
         //Création d'un pays valide
-        Pays angleterre = new Pays("Angleterre", "AAA");
-
+        Pays angleterre = new Pays("Angleterre", "ANG");
         Auteur auteur1 = new Auteur("William", "Shakespeare", angleterre);
 
 
