@@ -2,9 +2,9 @@ package pays;
 
 public class Pays {
 
-    public static final String CODE_TEMP = "ASS";
+    public static final String CODE_DEFAUT = "ASS";
     public String nom;
-    private String code;
+    private String code = CODE_DEFAUT;
 
     public Pays(String nom, String code) {
         this.nom = nom;
@@ -15,8 +15,7 @@ public class Pays {
         if (valideCode(code)){
             this.code = code;
         } else {
-            System.out.println("Code invalide. Attribution d'un code temporaire. Veuillez modifier.");
-            this.code = CODE_TEMP;
+            System.out.println("Code invalide.");
         }
     }
 

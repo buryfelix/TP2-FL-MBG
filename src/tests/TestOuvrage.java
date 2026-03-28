@@ -1,10 +1,12 @@
 package tests;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import livres.AbstractOuvrage;
 import livres.Auteur;
 
+import livres.OuvragePapier;
 import serie.Serie;
 
 import pays.Pays;
@@ -35,31 +37,30 @@ public class TestOuvrage {
 
         //Voici une partie des tests! Il faut en ajouter, pour les fonctionnalités non testées!
         System.out.println("-----Test des constructeurs d'ouvrage et des diverses validations-----------");
-        //TODO REFAIRE OUVRAGES
-//        Ouvrage livreA = new Ouvrage("Titre assez long", john);
-//        System.out.println(livreA);
+        OuvragePapier livreA = new OuvragePapier("Titre assez long", john, 500000000);
+        System.out.println(livreA);
+        //TODO REFAIRE OUVRAGES, livreB AUDIO ET livreC VIDEO
 //        Ouvrage livreB = new Ouvrage("Ti", john);
 //        System.out.println(livreB);
 //        Ouvrage livreC = new Ouvrage(null, john);
 //        System.out.println(livreC);
 
         //bibliotheque.Auteur null et valeur par défaut de l'bibliotheque.Auteur
-        //TODO REFAIRE OUVRAGES
-//        Ouvrage livreA1 = new Ouvrage("Titre assez long", null);
-//        System.out.println(livreA1);
-//        //bibliotheque.Auteur fonctionnel
-//        Ouvrage livre1 = new Ouvrage("Tout va bien", albertine);
-//        System.out.println(livre1);
+        OuvragePapier livreA1 = new OuvragePapier("Titre assez long", null, 666);
+        System.out.println(livreA1);
+        //bibliotheque.Auteur fonctionnel
+        OuvragePapier livre1 = new OuvragePapier("Tout va bien", albertine, 454);
+        System.out.println(livre1);
 
         //Date null et valeur par défaut de la date
         //TODO REFAIRE OUVRAGES
-//        livre1.setDate(null);
-//        System.out.println(livre1);
-//        livre1.setDate(LocalDate.now().minusYears(5));
-//        System.out.println(livre1);
+        livre1.setDate(null);
+        System.out.println(livre1);
+        livre1.setDate(LocalDate.now().minusYears(5));
+        System.out.println(livre1);
 
         //Test de la validation sur le nb d'exemplaires (valide et non valide)
-        //TODO REFAIRE OUVRAGES
+        //TODO REFAIRE OUVRAGES, livre2 AUDIO
 //        Ouvrage livre2 = new Ouvrage("Tout va bien", albertine, Ouvrage.Format.AUDIO, LocalDate.now(), -10);
 //        System.out.println(livre2);
 
@@ -68,7 +69,7 @@ public class TestOuvrage {
 
         System.out.println("\n-----Tests des méthodes acheter et vendre-----------");
 
-        //TODO REFAIRE OUVRAGES
+        //TODO REFAIRE OUVRAGES, livre3 VIDEO
 //        Ouvrage livre3 = new Ouvrage("Musique du hasard", new Auteur("Paul", "Auster", usa), Ouvrage.Format.PAPIER, LocalDate.now(), 5);
 //        System.out.println(livre3);
 
@@ -82,21 +83,21 @@ public class TestOuvrage {
 //        System.out.println(livre3);
 
         //TODO REFAIRE OUVRAGES
-//        Ouvrage livre4 = new Ouvrage("Test", new Auteur("A", "B", usa), Ouvrage.Format.PAPIER, LocalDate.now(), 5);
-//
-//        System.out.println("\n-----Tests de la  méthode equals()-----------");
-//        //Deux ouvrages égaux
-//        Ouvrage livre5 = new Ouvrage("Test", new Auteur("A", "B", usa), Ouvrage.Format.PAPIER, null, 5);
-//        Ouvrage livre6 = new Ouvrage("Test", new Auteur("A", "B", usa), Ouvrage.Format.PAPIER, LocalDate.now(), 10);
-//        //Un qui ne l'est pas
-//        Ouvrage livre7 = new Ouvrage("Test", new Auteur("Z", "B", usa), Ouvrage.Format.PAPIER, LocalDate.now(), 5);
+        OuvragePapier livre4 = new OuvragePapier("Test", new Auteur("A", "B", usa), LocalDate.now(), 5);
 
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + livre4.equals(livre5));
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + livre4.equals(livre6));
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(livre7));
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(john));
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(null));
-//        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals("Test"));
+        System.out.println("\n-----Tests de la  méthode equals()-----------");
+        //Deux ouvrages égaux
+        OuvragePapier livre5 = new OuvragePapier("Test", new Auteur("A", "B", usa), null, 5);
+        OuvragePapier livre6 = new OuvragePapier("Test", new Auteur("A", "B", usa), LocalDate.now(), 10);
+        //Un qui ne l'est pas
+        OuvragePapier livre7 = new OuvragePapier("Test", new Auteur("Z", "B", usa), LocalDate.now(), 5);
+
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + livre4.equals(livre5));
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + livre4.equals(livre6));
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(livre7));
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(john));
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals(null));
+        System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals("Test"));
     }
 
 
@@ -123,20 +124,19 @@ public class TestOuvrage {
         Pays usa = new Pays("Etats-Unis", "USA");
         Auteur john = new Auteur("John", "Smith", usa);
         //Création d'un ouvrage valide
-        //TODO REFAIRE OUVRAGES
-//        Ouvrage livreA = new Ouvrage("Harry Potter et la Communauté de l'Anneau", john);
+        OuvragePapier livreA = new OuvragePapier("Harry Potter et la Communauté de l'Anneau", john, 371);
         //Création d'une série
         Serie serieA = new Serie("Harry Potter");
         System.out.println(serieA);
         Serie serieB = new Serie(null);
         System.out.println(serieB);
-//        //Ajout d'un ouvrage
-//        serieA.ouvrages.add(livreA);
-//        System.out.println(serieA);
-//
-//        //Retrait d'un ouvrage
-//        serieA.ouvrages.remove(livreA);
-//        System.out.println(serieA);
+        //Ajout d'un ouvrage
+        serieA.ouvrages.add(livreA);
+        System.out.println(serieA);
+
+        //Retrait d'un ouvrage
+        serieA.ouvrages.remove(livreA);
+        System.out.println(serieA);
     }
 
     public void testPays() {

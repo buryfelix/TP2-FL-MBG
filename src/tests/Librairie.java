@@ -2,6 +2,7 @@ package tests;
 
 import livres.Auteur;
 import livres.AbstractOuvrage;
+import livres.OuvragePapier;
 import pays.Pays;
 
 import java.util.ArrayList;
@@ -20,11 +21,11 @@ public class Librairie {
         auteurs.add(john);
         auteurs.add(jean);
 
-        //TODO REFAIRE OUVRAGES
-//        ouvrages.add(new Ouvrage("Titre 1", john));
-//        ouvrages.add(new Ouvrage("Titre 2", albertine));
-//        ouvrages.add(new Ouvrage("Titre 3", john));
-//        ouvrages.add(new Ouvrage("Titre 4", john));
+        ouvrages.add(new OuvragePapier("Titre 1", john, 40));
+        ouvrages.add(new OuvragePapier("Titre 2", albertine, 70));
+        ouvrages.add(new OuvragePapier("Titre 3", john,1500));
+        ouvrages.add(new OuvragePapier("Titre 4", john,3));
+        //TODO CHANGER POUR 3 OUVRAGES DES 2 TYPES RESTANTS
 //        ouvrages.add(new Ouvrage("Titre 5", albertine));
 //        ouvrages.add(new Ouvrage("Titre 6", john));
 //        ouvrages.add(new Ouvrage("Titre 7", john));
