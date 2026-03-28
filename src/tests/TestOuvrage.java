@@ -5,11 +5,11 @@ import java.util.List;
 
 import livres.Ouvrage;
 import livres.Auteur;
-<<<<<<< Updated upstream
+
 import serie.Serie;
-=======
+
 import pays.Pays;
->>>>>>> Stashed changes
+
 
 /**
  * CoursPOO 1
@@ -107,7 +107,7 @@ public class TestOuvrage {
         System.out.println("Livres de Jacques: " + resultat);
     }
 
-<<<<<<< Updated upstream
+
     public void testSerie(){
         //Création d'un auteur valide
         Auteur john = new Auteur("John", "Smith", "Etats-Unis");
@@ -118,7 +118,7 @@ public class TestOuvrage {
         //Ajout d'un ouvrage
         serieA.ouvrages.add(livreA);
     }
-=======
+
     public void testPays() {
 
         System.out.println("-----Test des constructeurs de pays et des diverses validations-----------");
