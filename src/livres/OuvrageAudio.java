@@ -49,7 +49,7 @@ public class OuvrageAudio extends AbstractOuvrage {
         String affichageDAte = this.getDate() != null ? this.getDate().toString() : "Non Disponible";
 
         return "[" + identificateur() + "] " + this.getTitre() + " (" + this.getAuteur().getPrenom() + " "
-                + this.getAuteur().getNom() + ") - " + this.getType() + " - disponible le " + affichageDAte + " (" + this.getNombreExemplaires() + " ex. - " + typeAudio + ")";
+                + this.getAuteur().getNom() + ") - " + this.getType() + " - disponible le " + affichageDAte + " (" + this.getNombreExemplaires() + " ex. - " + typeAudio + " - " + getDuree() + " .min" + ")";
     }
 
 }
