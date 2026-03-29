@@ -3,11 +3,8 @@ package tests;
 import java.time.LocalDate;
 import java.util.List;
 
-import livres.AbstractOuvrage;
-import livres.Auteur;
+import livres.*;
 
-import livres.OuvrageAudio;
-import livres.OuvragePapier;
 import serie.Serie;
 
 import pays.Pays;
@@ -40,11 +37,11 @@ public class TestOuvrage {
         System.out.println("-----Test des constructeurs d'ouvrage et des diverses validations-----------");
         OuvragePapier livreA = new OuvragePapier("Titre assez long", john, 500000000);
         System.out.println(livreA);
-        //TODO REFAIRE OUVRAGES, livreB AUDIO ET livreC VIDEO
-          OuvrageAudio livreB = new OuvrageAudio("Ti", john, OuvrageAudio.FormatAudio.NUMERIQUE, 5);
-          System.out.println(livreB);
-//        Ouvrage livreC = new Ouvrage(null, john);
-//        System.out.println(livreC);
+        OuvrageAudio livreB = new OuvrageAudio("Ti", john, OuvrageAudio.FormatAudio.NUMERIQUE, 5);
+        System.out.println(livreB);
+        //Taille et Duree invalides, vont se mettre à zéro
+        OuvrageVideo livreC = new OuvrageVideo(null, john, -1, -1);
+        System.out.println(livreC);
 
         //bibliotheque.Auteur null et valeur par défaut de l'bibliotheque.Auteur
         OuvragePapier livreA1 = new OuvragePapier("Titre assez long", null, 666);
@@ -54,7 +51,6 @@ public class TestOuvrage {
         System.out.println(livre1);
 
         //Date null et valeur par défaut de la date
-        //TODO REFAIRE OUVRAGES
         livre1.setDate(null);
         System.out.println(livre1);
         livre1.setDate(LocalDate.now().minusYears(5));
@@ -65,25 +61,23 @@ public class TestOuvrage {
         OuvrageAudio livre2 = new OuvrageAudio("Tout va bien", albertine, OuvrageAudio.FormatAudio.ANALOGIQUE, 10, LocalDate.now(), -10);
         System.out.println(livre2);
 
-        livre2 = new OuvrageAudio("Tout va bien", albertine, OuvrageAudio.FormatAudio.ANALOGIQUE,10, LocalDate.now(), 20);
+        livre2 = new OuvrageAudio("Tout va bien", albertine, OuvrageAudio.FormatAudio.ANALOGIQUE, 10, LocalDate.now(), 20);
         System.out.println(livre2);
 
         System.out.println("\n-----Tests des méthodes acheter et vendre-----------");
 
-        //TODO REFAIRE OUVRAGES, livre3 VIDEO
-//        Ouvrage livre3 = new Ouvrage("Musique du hasard", new Auteur("Paul", "Auster", usa), Ouvrage.Format.PAPIER, LocalDate.now(), 5);
-//        System.out.println(livre3);
+        OuvrageVideo livre3 = new OuvrageVideo("Musique du hasard", new Auteur("Paul", "Auster", usa), 500, LocalDate.now(), 5, 5);
+        System.out.println(livre3);
 
-//        livre3.acheter(5);
-//        System.out.println(livre3);
-//
-//        System.out.println("On peut vendre 8 livres? " + livre3.vendre(8));
-//        System.out.println(livre3);
-//
-//        System.out.println("On peut vendre 10 livres? " + livre3.vendre(10));
-//        System.out.println(livre3);
+        livre3.acheter(5);
+        System.out.println(livre3);
 
-        //TODO REFAIRE OUVRAGES
+        System.out.println("On peut vendre 8 livres? " + livre3.vendre(8));
+        System.out.println(livre3);
+
+        System.out.println("On peut vendre 10 livres? " + livre3.vendre(10));
+        System.out.println(livre3);
+
         OuvragePapier livre4 = new OuvragePapier("Test", new Auteur("A", "B", usa), LocalDate.now(), 5);
 
         System.out.println("\n-----Tests de la  méthode equals()-----------");

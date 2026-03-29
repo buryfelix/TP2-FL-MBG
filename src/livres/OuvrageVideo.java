@@ -51,11 +51,11 @@ public class OuvrageVideo extends AbstractOuvrage {
     }
 
     private boolean tailleMbValide(int tailleMb){
-        return tailleMb > 0;
+        return tailleMb >= 0;
     }
 
     private boolean dureeMinValide(int dureeMin){
-        return dureeMin > 0;
+        return dureeMin >= 0;
     }
 
     @Override
