@@ -4,8 +4,11 @@ import java.time.LocalDate;
 
 public class OuvrageVideo extends AbstractOuvrage {
 
-    private int dureeMin = 0;
-    private int tailleMb = 0;
+    public static final int DUREE_MIN_DEFAULT = 0;
+    public static final int TAILLE_MB_DEFAULT = 0;
+
+    private int dureeMin = DUREE_MIN_DEFAULT;
+    private int tailleMb = TAILLE_MB_DEFAULT;
 
     public OuvrageVideo(String titre, Auteur auteur, int dureeMin, LocalDate date, int nombreExemplaires, int tailleMb){
         super(titre, auteur, Format.VIDEO, date, nombreExemplaires);
